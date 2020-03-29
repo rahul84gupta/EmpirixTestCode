@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		<listener class-name="com.empirix.Utility.ExtentReporterNG" />
+	</listeners>
+    
+  <test name="Chrome test">	
+		<parameter name="browserName" value="chrome" />
+		<parameter name="Language" value="english" />
+		<classes>
+			<!-- <class name="com.empirix.TestCases.LoginTest"/>	 -->
+			<class name="com.empirix.TestCases.DashboardTest"/>	
+			<!-- <class name="com.empirix.TestCases.ClientProfileTest"/>	 -->		
+		</classes>		 
+	</test> <!-- Test -->
+  
+  <!-- <test name="Firefox test">	
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.empirix.testcases.LoginTest"/>			
+		</classes>		
+	</test> --> <!-- Test -->
+ 
+</suite> <!-- Suite -->
