@@ -17,11 +17,12 @@ public class Common {
 	public Properties prop;
 	public EventFiringWebDriver e_driver;
 	public WebEventListener eventListener;
-
+	public String Basepath;
+	
 	public Common() throws IOException {
+		Basepath= System.getProperty("user.dir");
 		prop = new Properties();
-		FileInputStream fis = new FileInputStream("C:\\Users\\rkumar9\\mavenJava\\com.empirix.VoiceWatch\\"
-				+ "src\\main\\java\\com\\empirix\\config\\config.properties");
+		FileInputStream fis = new FileInputStream(Basepath+"\\src\\main\\java\\com\\empirix\\config\\config.properties");
 		prop.load(fis);
 
 	}
@@ -32,11 +33,10 @@ public class Common {
 		if (Browser.equals("chrome")) {
 //			ChromeOptions co = new ChromeOptions();
 //			 co.addArguments("Headless");
-			System.setProperty("webdriver.chrome.driver",
-					"C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver",Basepath+"\\drivers\\chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (Browser.equals("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "C:\\Program Files\\Mozilla Firefox\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", Basepath+"\\drivers\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
 		e_driver = new EventFiringWebDriver(driver);
