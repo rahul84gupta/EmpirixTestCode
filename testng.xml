@@ -9,17 +9,20 @@
 		<parameter name="browserName" value="chrome" />
 		<parameter name="Language" value="english" />
 		<classes>
-			<!-- <class name="com.empirix.TestCases.LoginTest"/>	 -->
+			<class name="com.empirix.TestCases.LoginTest"/>	
 			<class name="com.empirix.TestCases.DashboardTest"/>	
-			<!-- <class name="com.empirix.TestCases.ClientProfileTest"/>	 -->		
+			<class name="com.empirix.TestCases.ClientProfileTest"/>			
 		</classes>		 
 	</test> <!-- Test -->
   
-  <!-- <test name="Firefox test">	
-		<parameter name="browser" value="firefox" />
+  <test name="Firefox test">	
+		<parameter name="browserName" value="chrome" />
+		<parameter name="Language" value="english" />
 		<classes>
-			<class name="com.empirix.testcases.LoginTest"/>			
-		</classes>		
-	</test> --> <!-- Test -->
+			<class name="com.empirix.TestCases.LoginTest"/>	
+			<class name="com.empirix.TestCases.DashboardTest"/>	
+			<class name="com.empirix.TestCases.ClientProfileTest"/>			
+		</classes>			
+	</test><!-- Test -->
  
 </suite> <!-- Suite -->

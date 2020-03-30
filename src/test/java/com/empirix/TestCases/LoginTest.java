@@ -44,10 +44,7 @@ public class LoginTest {
 	
 	@Test(priority=3)
 	public void validatetitleOnDashboardPage() {
-		//Login.waitforpage();
-		System.out.println(driver.getTitle());
-		System.out.println(com.prop.getProperty("ExpectedSignInTitle"));
-		String Expectedtitles=com.prop.getProperty("ExpectedSignInTitle");
+		String Expectedtitles="VoiceWatch";
 		String actualTitles= driver.getTitle();
 		Assert.assertEquals(actualTitles,Expectedtitles);
 	}
