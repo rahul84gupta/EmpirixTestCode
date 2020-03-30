@@ -16,11 +16,11 @@ public class ClientProfile {
 	}
 	
 	@FindBy(xpath="//a[@href='/client']")
-	WebElement Client;
+	private	WebElement Client;
 	@FindBy(xpath="//label[contains(text(),'Empirix_QA_Training')]")
-	WebElement ClientName;
+	private	WebElement ClientName;
 	@FindBy(xpath="//label[contains(text(),'This client is for QA Test purposes')]")
-	WebElement Description;
+	private	WebElement Description;
 	
 	public String clientName() {
 		return ClientName.getText();

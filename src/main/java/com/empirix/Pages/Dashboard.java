@@ -18,39 +18,39 @@ public class Dashboard {
 	}
 
 	@FindBy(xpath = "//div[@class='header-branding']/ul/li[1]/a")
-	WebElement profileDropDown;
+	private	WebElement profileDropDown;
 	@FindBy(xpath = "//a[contains(text(),'Japanese')]")
-	WebElement japaneeseLink;
+	private	WebElement japaneeseLink;
 	@FindBy(xpath = "//span[@class='product']")
-	WebElement textVisible;
+	private	WebElement textVisible;
 	@FindBy(xpath = "//a[contains(text(),'English')]")
-	WebElement englishLink;
+	private	WebElement englishLink;
 	@FindBy(xpath = "//div[@class='cc-compliance']/a")
-	WebElement cookie;
+	private	WebElement cookie;
 	@FindBy(xpath ="//div[@id='wrapper']/header/section[@class='sup-header']/div/ul/li[1]/a") // "//li[@class='active mactive']//a[contains(text(),'Dashboard')]")
-	WebElement dashboard;
+	private	WebElement dashboard;
 	@FindBy(xpath = "//a[contains(text(),'Alerts')]")
-	WebElement Alerts;
+	private	WebElement Alerts;
 	@FindBy(xpath = "//a[@href='/tests']")
-	WebElement Tests;
+	private	WebElement Tests;
 	@FindBy(xpath = "//a[@href='/variables']")
-	WebElement Variables;
+	private	WebElement Variables;
 	@FindBy(xpath = "//a[@href='/notifi']")
-	WebElement Notifications;
+	private	WebElement Notifications;
 	@FindBy(xpath="//h1[contains(text(),'Overall Performance')]")
-	WebElement PageLoadCheck;
+	private	WebElement PageLoadCheck;
 	@FindBy(xpath="//span[contains(text(),'Total')]")
-	WebElement ElementCheckForAlertTab;
+	private	WebElement ElementCheckForAlertTab;
 	@FindBy(xpath="//th[contains(text(),'Error Step')]")
-	WebElement ValidateAlertsText;
+	private	WebElement ValidateAlertsText;
 	@FindBy(xpath ="//h4[contains(text(),'Test')]")
-	WebElement PageLoadCheckTestsTab;
+	private	WebElement PageLoadCheckTestsTab;
 	@FindBy(xpath ="//div[@class='ng-scope']//h4[contains(text(),'Variable')]")
-	WebElement PageLoadCheckVariablesTab;
+	private	WebElement PageLoadCheckVariablesTab;
 	@FindBy(xpath = "//h4[contains(text(),'Notification')]")
-	WebElement PageLoadCheckNotifyTab;
+	private	WebElement PageLoadCheckNotifyTab;
 	@FindBy(xpath = "//div[@id='overall']/nav/div/div/h1")
-	WebElement DashboardTabText;
+	private	WebElement DashboardTabText;
 
 	public void waitforpage() {
 		Utility.waitForElementPresent(driver, textVisible, "VoiceWatch");

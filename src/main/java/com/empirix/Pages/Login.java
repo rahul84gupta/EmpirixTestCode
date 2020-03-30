@@ -18,17 +18,17 @@ public class Login {
 	}
 	
 	@FindBy(xpath="//input[@type='text']")
-			WebElement username;
+		private	WebElement username;
 	@FindBy(xpath="//input[@type='password']")
-			WebElement password;
+	private	WebElement password;
 	@FindBy(xpath="//input[@type='submit']")
-			WebElement submit;
+	private	WebElement submit;
 	@FindBy(xpath="//h1[contains(text(),'Overall Performance')]")
-			WebElement detail;
+	private	WebElement detail;
 	@FindBy(xpath = "//a[contains(text(),'Alerts')]")
-	WebElement Alerts;
+	private	WebElement Alerts;
 	@FindBy(xpath = "//div[@id='overall']/nav/div/div/h1")
-	WebElement textVisible;
+	private	WebElement textVisible;
 	
 	public void waitforpage() {
 		Utility.waitForElementPresent(driver, detail, "Overall Performance");		
