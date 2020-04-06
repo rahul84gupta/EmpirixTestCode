@@ -18,11 +18,12 @@ public class Common {
 	public EventFiringWebDriver e_driver;
 	public WebEventListener eventListener;
 	public String Basepath;
-	
+
 	public Common() throws IOException {
-		Basepath= System.getProperty("user.dir");
+		Basepath = System.getProperty("user.dir");
 		prop = new Properties();
-		FileInputStream fis = new FileInputStream(Basepath+"\\src\\main\\java\\com\\empirix\\config\\config.properties");
+		FileInputStream fis = new FileInputStream(
+				Basepath + "\\src\\main\\java\\com\\empirix\\config\\config.properties");
 		prop.load(fis);
 
 	}
@@ -33,24 +34,21 @@ public class Common {
 		if (Browser.equals("chrome")) {
 //			ChromeOptions co = new ChromeOptions();
 //			 co.addArguments("Headless");
-			System.setProperty("webdriver.chrome.driver",Basepath+"\\drivers\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", Basepath + "\\drivers\\chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (Browser.equals("firefox")) {
-			System.setProperty("webdriver.gecko.driver", Basepath+"\\drivers\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", Basepath + "\\drivers\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
 		e_driver = new EventFiringWebDriver(driver);
 		eventListener = new WebEventListener();
 		e_driver.register(eventListener);
 		driver = e_driver;
-		// driver.manage().window().maximize();
+		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(180, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
 		driver.get("https://services.empirix.com");
 		Thread.sleep(3000);
 		return driver;
-
 	}
-
 }

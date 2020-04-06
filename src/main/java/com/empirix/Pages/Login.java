@@ -32,16 +32,7 @@ public class Login {
 	
 	public void waitforpage() {
 		Utility.waitForElementPresent(driver, detail, "Overall Performance");		
-	}
-	
-	public Dashboard signIn(String UserName, String Password) throws IOException{
-		Utility.fluentWait(driver, username);
-		username.sendKeys(UserName);
-		password.sendKeys(Password);
-		submit.click();
-		Utility.fluentWait(driver, Alerts);
-		return new Dashboard(driver);
-	}
+	}	
 	public void validateDashboardPage() {
 		Utility.fluentWait(driver, textVisible);
 		if(textVisible.isDisplayed()==true) {
@@ -50,6 +41,14 @@ public class Login {
 		else {
 			System.out.println("Issue while SignIn");
 		}
+	}
+	public Dashboard signIn(String UserName, String Password) throws IOException{
+		Utility.fluentWait(driver, username);
+		username.sendKeys(UserName);
+		password.sendKeys(Password);
+		submit.click();
+		Utility.fluentWait(driver, Alerts);
+		return new Dashboard(driver);
 	}
 	
 }
