@@ -39,13 +39,17 @@ public class ClientProfileTest {
 		ClientProfile = Dashboard.languageSelection(language);
 		ClientProfile.navigateToClientPage();
 		System.out.println("Navigated to Client Page");
-//		String Actual = ClientProfile.clientName();
-//		String Expected = com.prop.getProperty("ClientName");
-//		Assert.assertEquals(Actual, Expected);
+		System.out.println("Actual test 1 --->  "+ClientProfile.clientName());
+		//System.out.println("Expected ---->"+com.prop.getProperty("ClientName"));
+		String Actual = ClientProfile.clientName();
+		String Expected = "Empirix_QA_Training";
+		Assert.assertEquals(Actual, Expected);
 	}
 
 	@Test(priority = 2)
 	public void validateClientDescription() throws InterruptedException, IOException {
+
+		System.out.println("Actual test 2 --->  "+ClientProfile.description());
 		String Actual = ClientProfile.description();		
 		String Expected = "This client is for QA Test purposes";
 		Assert.assertEquals(Actual, Expected);

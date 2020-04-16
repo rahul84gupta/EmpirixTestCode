@@ -57,6 +57,7 @@ public class ExtentReporterNG  implements IReporter {
 	}
 
 	private void init() {
+		
 		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(OUTPUT_FOLDER + FILE_NAME);
 		htmlReporter.config().setDocumentTitle("ExtentReports - Created by TestNG Listener");
 		htmlReporter.config().setReportName("ExtentReports - Created by TestNG Listener");

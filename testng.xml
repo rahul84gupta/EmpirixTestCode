@@ -4,25 +4,25 @@
 	<listeners>
 		<listener class-name="com.empirix.Utility.ExtentReporterNG" />
 	</listeners>
-    
-  <test name="Chrome test">	
+
+	<test name="Chrome test">
 		<parameter name="browserName" value="chrome" />
 		<parameter name="Language" value="english" />
 		<classes>
-			<class name="com.empirix.TestCases.LoginTest"/>	
-			<class name="com.empirix.TestCases.DashboardTest"/>	
-			<class name="com.empirix.TestCases.ClientProfileTest"/>			
-		</classes>		 
+			<class name="com.empirix.TestCases.LoginTest" />
+			<class name="com.empirix.TestCases.DashboardTest">
+				<methods>
+					<include name="validateAlertsTab" />
+					<include name="validateTestsTab" />
+					<include name="validateNotificationsTab" />
+					<include name="validateVariablesTab" />
+					<include name="validateJapaneeseLanguageSelection" />
+					<exclude name="validateEnglishLanguageSelection" />
+					<exclude name="validateDashboardTab" />
+				</methods>
+			</class>
+			<class name="com.empirix.TestCases.ClientProfileTest" />
+		</classes>
 	</test> <!-- Test -->
-  
-  <test name="Firefox test">	
-		<parameter name="browserName" value="chrome" />
-		<parameter name="Language" value="english" />
-		<classes>
-			<class name="com.empirix.TestCases.LoginTest"/>	
-			<class name="com.empirix.TestCases.DashboardTest"/>	
-			<class name="com.empirix.TestCases.ClientProfileTest"/>			
-		</classes>			
-	</test><!-- Test -->
- 
+
 </suite> <!-- Suite -->

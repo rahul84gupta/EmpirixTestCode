@@ -5,11 +5,14 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 //import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+
+import com.empirix.Utility.Utility;
 import com.empirix.Utility.WebEventListener;
 
 public class Common {
@@ -48,7 +51,8 @@ public class Common {
 		driver.manage().timeouts().pageLoadTimeout(180, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("https://services.empirix.com");
-		Thread.sleep(3000);
+		Utility.fluentWait(driver, driver.findElement(By.xpath("//input[@type='text']")),180);
+		//Thread.sleep(3000);
 		return driver;
 	}
 }

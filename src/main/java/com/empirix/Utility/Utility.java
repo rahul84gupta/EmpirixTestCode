@@ -3,11 +3,9 @@ package com.empirix.Utility;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
@@ -51,8 +49,8 @@ public class Utility {
 
 	}
 
-	public static void fluentWait(WebDriver driver, final WebElement element) {
-		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(60))
+	public static void fluentWait(WebDriver driver, final WebElement element, int Time) {
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(Time))
 				.pollingEvery(Duration.ofSeconds(5)).ignoring(NoSuchElementException.class);
 		 wait.until(new Function<WebDriver, WebElement>() {
 			public WebElement apply(WebDriver t) {

@@ -12,7 +12,6 @@
         <methods>
           <include name="validateNotificationsTab"/>
           <include name="validateTestsTab"/>
-          <include name="validateDashboardTab"/>
           <include name="validateVariablesTab"/>
           <include name="validateAlertsTab"/>
           <include name="validateJapaneeseLanguageSelection"/>

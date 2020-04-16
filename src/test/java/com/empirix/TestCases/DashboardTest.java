@@ -34,22 +34,29 @@ public class DashboardTest {
 
 	@Test(priority = 1)
 	public void validateAlertsTab() throws InterruptedException {
+		System.out.println("Inside Alert");
 		Dashboard.alerts();
+		Thread.sleep(3000);
+		System.out.println("Actual p1 -->  "+Dashboard.alertsTab());
+		Thread.sleep(3000);
 		String Actual=Dashboard.alertsTab();
 		String Expected="Error Step";	
 		Assert.assertEquals(Actual,Expected);
 	}
 
 	@Test(priority = 2)
-	public void validateTestsTab() {
+	public void validateTestsTab() throws InterruptedException {
+		System.out.println("Inside Validate Tests Lab");
 		Dashboard.tests();
+		System.out.println("Actual p2 -->  "+Dashboard.testsTab());
 		String Actual=Dashboard.testsTab();
 		String Expected="Test";//com.prop.getProperty("ExpectedTestsValue");		
 		Assert.assertEquals(Actual,Expected);
 	}
 
 	@Test(priority = 3)
-	public void validateVariablesTab() {
+	public void validateVariablesTab() throws InterruptedException {
+		System.out.println("Inside Variables");
 		Dashboard.variables();		
 		String Actual=Dashboard.variablesTab();
 		String Expected="Variable"; //com.prop.getProperty("ExpectedVariablesValue");		
@@ -57,7 +64,8 @@ public class DashboardTest {
 	}
 
 	@Test(priority = 4)
-	public void validateNotificationsTab() {
+	public void validateNotificationsTab() throws InterruptedException {
+		System.out.println("Inside Notify");
 		Dashboard.notification();		
 		String Actual=Dashboard.notificationsTab();
 		String Expected="Notification";//com.prop.getProperty("ExpectedNotifyValue");		
@@ -66,6 +74,7 @@ public class DashboardTest {
 	
 	@Test(priority=5)
 	public void validateDashboardTab() throws InterruptedException {
+		System.out.println("Inside Dashboard");
 		Thread.sleep(3000);
 		Dashboard.dashboards();
 		String Actual = Dashboard.dashboardTab();
@@ -76,7 +85,9 @@ public class DashboardTest {
 	@Test(priority=6)
 	public void validateJapaneeseLanguageSelection() throws InterruptedException, IOException {
 		language = "japaneese";
+		Thread.sleep(2000);
 		Dashboard.languageSelection(language);
+		Thread.sleep(2000);
 		if(Dashboard.japaneeseLanguageSelectionValidate()==true) {
 			System.out.println("Japaneese Language is Selected");
 		}
@@ -88,6 +99,7 @@ public class DashboardTest {
 		language = "english";
 		Thread.sleep(2000);
 		Dashboard.languageSelection(language);
+		
 		if(Dashboard.englishLanguageSelectionValidate()==true) {
 			System.out.println("English Language is Selected");
 		}

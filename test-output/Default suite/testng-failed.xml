@@ -6,13 +6,8 @@
       <class name="com.empirix.TestCases.DashboardTest">
         <methods>
           <include name="validateNotificationsTab"/>
-          <include name="validateTestsTab"/>
-          <include name="validateDashboardTab"/>
-          <include name="validateVariablesTab"/>
-          <include name="validateAlertsTab"/>
           <include name="validateJapaneeseLanguageSelection"/>
           <include name="setUp"/>
-          <include name="validateEnglishLanguageSelection"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.empirix.TestCases.DashboardTest -->

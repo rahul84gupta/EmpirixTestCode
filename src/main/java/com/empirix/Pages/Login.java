@@ -34,7 +34,7 @@ public class Login {
 		Utility.waitForElementPresent(driver, detail, "Overall Performance");		
 	}	
 	public void validateDashboardPage() {
-		Utility.fluentWait(driver, textVisible);
+		Utility.fluentWait(driver, textVisible,30);
 		if(textVisible.isDisplayed()==true) {
 			System.out.println("User is successfully Signed In");
 		}
@@ -43,11 +43,11 @@ public class Login {
 		}
 	}
 	public Dashboard signIn(String UserName, String Password) throws IOException{
-		Utility.fluentWait(driver, username);
+		Utility.fluentWait(driver, username,30);
 		username.sendKeys(UserName);
 		password.sendKeys(Password);
 		submit.click();
-		Utility.fluentWait(driver, Alerts);
+		Utility.fluentWait(driver, Alerts,30);
 		return new Dashboard(driver);
 	}
 	
